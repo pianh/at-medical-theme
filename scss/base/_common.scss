@@ -1,0 +1,153 @@
+@import url("../assets/fonts/NotoSans/stylesheet.css");
+@import url("../assets/fonts/SVN-Saudagar/stylesheet.css");
+@import url("../assets/fonts/SignRathi/stylesheet.css");
+
+html {
+    font-size: 62.5%;
+    position: relative;
+}
+
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    min-height: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    position: relative;
+    margin-top: 0 !important;
+}
+
+body {
+    font-size: 1.6rem;
+    line-height: 1.3;
+    background-color: var(--color-black);
+    font-family: 'Noto Sans', 'Poppins', ' Montserrat', sans-serif;
+    // text-rendering: optimizeSpeed;
+    // -moz-osx-font-smoothing: antialiased;
+    // text-rendering: optimizeLegibility;
+    // -moz-osx-font-smoothing: grayscale;
+    font-weight: 500;
+    color: var(--color-white);
+    // overflow: hidden auto;
+    overflow: hidden;
+
+    @media screen and (min-width: 2000px) {
+        font-size: 20px;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: currentColor;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+input,
+button,
+textarea,
+select {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+button {
+    outline: none;
+    border: none;
+    background: transparent;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+
+.pointer {
+    cursor: pointer;
+}
+
+.no-scroll {
+    touch-action: none;
+    -webkit-overflow-scrolling: none;
+    overflow: hidden !important;
+    overscroll-behavior: none;
+    height: 100vh;
+}
+
+.section__subtitle {
+    font-size: 2.4rem;
+    color: #ffffff;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: linear-gradient(90deg, #B66F29 0.37%, #DC9A27 27.52%, #EDB31F 52.76%, #D7942A 80.98%, #B06828 100%);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: -webkit-box;
+    -webkit-line-clamp: var(--line-clamp, 1);
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+
+    @include max(1200px) {
+        font-size: 2rem;
+    }
+
+    @include max(500px) {
+        font-size: 1.2rem;
+    }
+}
+
+.section__title {
+    font-weight: 700;
+    font-size: 4.8rem;
+    color: #ffffff;
+    margin-bottom: 1rem;
+
+    @include max(500px) {
+        font-size: 2.4rem;
+    }
+
+    @include max(800px) {
+        font-size: 2.7rem;
+    }
+}
+
+.section__des {
+    font-weight: 500;
+    clip-path: inset(0 0 0 0);
+    transition: 0.8s;
+    text-align: center;
+    margin: auto;
+}
+
+.highlight {
+    color: #fff;
+    background: $linearText;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

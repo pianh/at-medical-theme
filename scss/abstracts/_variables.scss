@@ -1,0 +1,51 @@
+/* Light Mode: Default */
+:root {
+
+    // #region
+    --color-primary: #0C1226;
+    // #endregion
+
+    // #region : Black/White
+    --color-black: #2f2f2e; // Title - Focus
+    --color-white: #ffffff;
+    --color-gray: #ccc;
+    // #endregion
+
+    --color-bg: rgb(7, 40, 82);
+    --color-bg-secondary: #011224;
+    --color-bg-third: rgba(255, 255, 255, 0.3);
+    --color-orange: #EDB31F;
+    --color-yellow: #FFC107;
+
+    // #region: text
+    --color-text-primary: #fff;
+    --color-text-secondary: rgba(255, 255, 255, 0.4);
+    // #endregion
+
+    // #region: card
+    --color-card-primary: #092B54;
+    // #endregion
+
+
+    // Padding
+    --pd-sc: 4rem;
+    --size-hd: 8rem;
+    --sc-pd: 9rem;
+
+    @media (max-width: 1230px) {
+        --size-hd: 4rem;
+    }
+
+    --width: calc((100vw - 120rem) / 2);
+    --cnt: calc(100vw -(100vw - 120rem) / 2);
+}
+
+// linear 
+$linear: linear-gradient(90deg, #FFAF61 0.37%, #DC9A27 27.52%, #EDB31F 52.76%, #D7942A 80.98%, #B06828 100%);
+$linearBlue: linear-gradient(357deg, #011224 0%, #062347 85.55%, #0C3A76 141.16%);
+$linearText: linear-gradient(90deg, #B66F29 0.37%, #DC9A27 27.52%, #EDB31F 52.76%, #D7942A 80.98%, #B06828 100%);
+$linearBg: linear-gradient(357deg, #011224 0%, #062347 85.55%, #0C3A76 141.16%);
+$linearTag: linear-gradient(315deg, #052449 -7.5%, #509AF2 222.87%);
+
+/* Dark Mode */
+[data-theme='dark'] {}

@@ -1,0 +1,165 @@
+@mixin flexCenter($horizontal: center, $vertical: center) {
+    display: flex;
+    align-items: $vertical;
+    justify-content: $horizontal;
+}
+
+@mixin flexColumn($gap: 0) {
+    display: flex;
+    flex-direction: column;
+    gap: $gap;
+}
+
+@mixin size($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin rounded($tl, $tr: $tl, $br: $tl, $bl: $tl) {
+    border-radius: $tl $tr $br $bl;
+}
+
+@mixin grid ($column, $spacing) {
+    --column: #{$column};
+    --spacing: #{$spacing};
+
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: wrap;
+    row-gap: var(--spacing);
+    margin-left: calc(-1 * var(--spacing));
+
+    >* {
+        width: calc(100% / var(--column) - var(--spacing));
+        margin-left: var(--spacing);
+    }
+}
+
+@mixin position($pos) {
+    @if ($pos ==top-left) {
+        top: 0;
+        left: 0;
+    }
+
+    @if ($pos ==top-right) {
+        top: 0;
+        right: 0;
+    }
+
+    @if ($pos ==bottom-left) {
+        bottom: 0;
+        left: 0;
+    }
+
+    @if ($pos ==bottom-right) {
+        bottom: 0;
+        right: 0;
+    }
+
+    @if ($pos ==center) {
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+    }
+}
+
+@mixin circle($w, $h, $circle: false) {
+    width: $w;
+    height: $h;
+
+    @if $circle ==true {
+        border-radius: 50%;
+    }
+}
+
+@mixin br($val: 1rem) {
+    border-radius: $val;
+    overflow: hidden;
+}
+
+@mixin media($device) {
+    @if $device ==pc {
+        @media (min-width: 991.98px) {
+            @content;
+        }
+    }
+
+    @if $device ==tab {
+        @media ((min-width: 768px) and (max-width: 991.97px)) {
+            @content;
+        }
+    }
+
+    @if $device ==mob {
+        @media (max-width: 575.98px) {
+            @content;
+        }
+    }
+}
+
+@mixin max($value) {
+    @media screen and (max-width: $value) {
+        @content;
+    }
+}
+
+@mixin min($value) {
+    @media screen and (min-width: $value) {
+        @content;
+    }
+}
+
+
+@mixin mid() {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin flex() {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+}
+
+@mixin pseudo() {
+    content: '';
+    position: absolute;
+}
+
+@mixin textHl() {
+    color: #fff;
+    background: $linearText;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@mixin lineClamp ($line-clamp: 2) {
+    display: -webkit-box;
+    -webkit-line-clamp: $line-clamp;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+@mixin maskImage ($url) {
+    -webkit-mask-size: 100%;
+    -webkit-mask-image: $url;
+    -moz-mask-image: $url;
+    -o-mask-image: $url;
+    background-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    background-size: cover;
+    -webkit-mask-position: bottom;
+    height: 100%;
+    background-color: transparent;
+}
+
+@mixin borderOrange() {
+    border-bottom: 1px solid;
+    border-image: linear-gradient(90deg, #FFAF61 0.37%, #DC9A27 27.52%, #EDB31F 52.76%, #D7942A 80.98%, #B06828 100%);
+    border-image-slice: 1;
+}

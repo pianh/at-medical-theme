@@ -1,0 +1,50 @@
+.breadcrumb {
+    padding: 3rem 0;
+    position: relative;
+
+    &__list {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        overflow: hidden;
+        gap: 1.6rem;
+        height: 100%;
+    }
+
+    &__item {
+        font-size: 1.6rem;
+        display: flex;
+        align-items: center;
+        gap: 1.6rem;
+    }
+
+    &__item:last-child::before {
+        filter: none;
+    }
+
+    &__item:not(:first-child)::before {
+        content: "\f054";
+        font-family: "Font Awesome 6 Pro";
+        width: 1.6rem;
+        height: 1.6rem;
+        border-radius: 100rem;
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+        -ms-align-items: center;
+        align-items: center;
+        -webkit-align-items: center;
+        justify-content: center;
+        -webkit-justify-content: center;
+        font-weight: 400;
+        flex-shrink: 0;
+        color: #969696;
+    }
+
+    &__item:last-child {
+        pointer-events: none;
+    }
+
+}

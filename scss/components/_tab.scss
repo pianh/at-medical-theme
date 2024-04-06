@@ -1,0 +1,22 @@
+.tabParentBtn {
+  color: #fff;
+}
+
+.tabChildBtn {
+  color: #fff;
+}
+
+.tabBtn {
+  cursor: pointer;
+  color: #fff;
+}
+
+.tabPanel {
+  display: none;
+  color: #fff;
+}
+
+.tabPanel.open {
+  display: block;
+  color: #fff;
+}

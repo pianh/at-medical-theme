@@ -1,0 +1,106 @@
+.contact {
+    padding-top: calc(var(--sc-pd) - 2rem);
+
+    @include max(1400px) {
+        padding-top: 2rem;
+    }
+
+    .container {
+        @include max(1400px) {
+            max-width: 123rem;
+        }
+    }
+
+    &__head {
+        text-align: center;
+        padding-bottom: 6rem;
+    }
+
+    &__head-title {
+        color: #fff;
+        font-style: normal !important;
+        padding-bottom: 1.6rem;
+        font-size: 4.8rem;
+        background: $linearText;
+        @include textHl();
+        font-weight: 500;
+    }
+
+    &__head-sub {
+        font-style: normal;
+        color: #FFF;
+        text-align: center;
+        font-size: 4.8rem;
+        font-weight: 500;
+
+        @include max(800px) {
+            font-size: 2.8rem;
+            font-weight: 400;
+        }
+    }
+
+    .contact__left {
+        .company {
+            font-size: 2.4rem;
+            line-height: 2.6rem;
+            font-weight: 400;
+
+            @include max(1000px) {
+                text-align: center;
+            }
+        }
+
+        .headquarter {
+            color: #FFF;
+            font-family: Noto Sans;
+            font-style: normal;
+            padding-top: 3.2rem;
+            font-size: 1.6rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+
+            .name {
+                font-weight: 700;
+                background: $linear;
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            .address {
+                span {
+                    font-weight: 700;
+                }
+            }
+
+            .hotline {
+                span {
+                    font-weight: 700;
+                }
+            }
+
+            .email {
+                span {
+                    font-weight: 700;
+                }
+            }
+
+            .map {
+                display: flex;
+                align-items: center;
+                justify-content: start;
+                gap: 1rem;
+                padding-top: 1rem;
+            }
+        }
+    }
+
+    .form__contact {
+        @include max(1000px) {
+            margin-top: 3rem;
+            padding: 4.8rem 2.8rem;
+        }
+    }
+
+}

@@ -1,0 +1,64 @@
+.pagination {
+    margin-top: 2.6rem;
+
+    &__list {
+        @include flexCenter;
+        margin-left: auto;
+        margin-right: auto;
+        gap: 1rem;
+    }
+
+    li.pagination__item span.current {
+        font-weight: 400;
+        color: var(--color-white);
+        width: 4.4rem;
+        height: 4.4rem;
+        border-radius: 100rem;
+        background: var(--color-orange);
+        @include flexCenter;
+    }
+
+    &__item {
+        width: 4.4rem;
+        height: 4.4rem;
+        border-radius: 100rem;
+        cursor: pointer;
+        position: relative;
+        background-color: transparent;
+        overflow: hidden;
+        font-size: 1.6rem;
+        transition: .4s;
+        @include flexCenter;
+
+        @include max(800px) {
+            width: 3rem;
+            height: 3rem;
+        }
+
+        a {
+            color: var(--color-white);
+        }
+
+        &:hover {
+            background: var(--color-orange);
+            transform: scale(1);
+            transform-origin: top right;
+            color: var(--color-white);
+        }
+    }
+
+
+
+    li.pagination__item.next {
+        color: #0C1226;
+        border: 0.1rem solid var(--color-orange);
+    }
+
+    li.pagination__item:first-child>a {
+        color: var(--color-orange);
+    }
+
+    li.pagination__item:hover:first-child>a {
+        color: var(--color-white);
+    }
+}

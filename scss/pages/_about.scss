@@ -1,0 +1,516 @@
+.about {
+    position: relative;
+
+    .container {
+        @include max(1000px) {
+            max-width: 123rem;
+        }
+    }
+}
+
+.about__banner {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    left: 0;
+    right: 0;
+
+    img {
+        width: 100%;
+    }
+}
+
+.about__vision {
+    position: relative;
+}
+
+.about__vision-head {
+    padding-top: var(--size-hd);
+    @include flexCenter;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.about__vision-cnt {
+    margin-top: 4rem;
+
+    &-row {
+        justify-content: space-between;
+    }
+
+    .col-md-5:nth-child(2) {
+        @include max(1000px) {
+            margin-left: 0;
+        }
+    }
+
+    .col {
+        @include max(1000px) {
+            width: 50%;
+        }
+    }
+
+    .vision__card {
+        position: relative;
+
+        &:first-child {
+            @include max(600px) {
+                margin-bottom: 2rem;
+            }
+        }
+
+        &-top {
+            position: relative;
+            z-index: 2;
+        }
+
+        &-img {
+            overflow: hidden;
+            border-radius: 1rem 1rem 0 0;
+        }
+
+        &-tag {
+            position: absolute;
+            background: $linear;
+            padding: 1.6rem 3rem;
+            border-radius: 0 5rem 5rem 0;
+            transform: translateY(-50%);
+            left: 0;
+            z-index: 5;
+
+            @include max(1000px) {
+                padding: 1.2rem;
+            }
+
+            span.text {
+                background: $linearText;
+                font-size: 3.4rem;
+                font-weight: 600;
+                text-transform: uppercase;
+                background: $linearTag;
+                @include textHl;
+                background: linear-gradient(315deg, #052449 -7.5%, #509af2 222.87%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+
+                @include max(1000px) {
+                    font-size: 2.9rem;
+                }
+
+                @include max(800px) {
+                    font-size: 1.8rem;
+                }
+
+                @include max(600px) {
+                    font-size: 1.4rem;
+                }
+            }
+        }
+
+        &-bot {
+            position: relative;
+            padding: 6rem 3rem;
+            padding-bottom: 16rem;
+
+            // background-color: var(--color-white);
+            @include max(800px) {
+                padding: 4rem 1.2rem;
+            }
+
+            @include max(600px) {
+                padding: 4rem 1.2rem;
+                background-color: var(--color-white);
+                @include br;
+            }
+
+            p.des {
+                color: #013f79;
+                font-size: 1.8rem;
+                color: #013f79;
+                font-size: 1.8rem;
+                position: relative;
+                z-index: 2;
+
+                @include max(1000px) {
+                    font-size: 1.6rem;
+                }
+
+                @include max(800px) {
+                    font-size: 1.5rem;
+                    padding-bottom: 2rem;
+                }
+
+                @include max(600px) {
+                    font-size: 1.4rem;
+                }
+            }
+
+            .img-cycle {
+                position: absolute;
+                width: 130%;
+                top: 80%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+
+                @include max(1000px) {
+                    top: 88%;
+                    width: 100%;
+                }
+
+                @include max(800px) {
+                    top: 88%;
+                    width: 110%;
+                }
+
+                // z-index: 6;
+                @include max(600px) {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .vision__card::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--color-white);
+        border-radius: 1rem 1rem 0 0;
+        clip-path: ellipse(112% 66% at 29% 32%);
+        z-index: 1;
+    }
+}
+
+// Gia tri cot loi
+.about__value {
+    margin-top: 8rem;
+    padding-top: 8rem;
+
+    .about__value-head {
+        @include flexCenter;
+        flex-direction: column;
+        gap: .5rem;
+
+        @include max(600px) {
+            text-align: center;
+        }
+    }
+
+    .about__value-row {
+        justify-content: center;
+        margin-top: 1rem;
+
+        // .col {
+        //     @include max(600px) {
+        //         margin-top: 1.5rem;
+        //     }
+        // }
+        @include max(600px) {
+            .col:last-child {
+                width: 100%;
+            }
+        }
+
+
+    }
+
+    .about__item {
+        display: flex;
+        gap: 3rem;
+
+        @include max(800px) {
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        @include max(600px) {
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        &-left {
+            margin-top: auto;
+            margin-bottom: auto;
+        }
+
+        &-icon {
+            width: 9.6rem;
+
+            @include max(600px) {
+                width: 6rem;
+            }
+        }
+
+        &-right {
+            @include flexColumn;
+            gap: 1.6rem;
+
+            h4.title {
+                font-size: 2.4rem;
+                @include textHl;
+
+                @include max(800px) {
+                    font-size: 1.7rem;
+                }
+            }
+
+            p.des {
+                font-size: 1.6rem;
+
+                @include max(800px) {
+                    font-size: 1.7rem;
+                }
+
+                @include max(600px) {
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+}
+
+.about__why {
+    padding-top: calc(var(--size-hd) * 2);
+
+    &-head {
+        @include flexColumn;
+        gap: 0.5rem;
+        margin-bottom: 6rem;
+    }
+
+    &-bn {
+        height: 100%;
+        max-height: 100%;
+        object-fit: cover;
+        transform: translateY(-20px);
+
+        @include max(1000px) {
+            @include flexCenter;
+        }
+
+        @include max(600px) {
+            height: fit-content;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.about__partner-slider {
+    background-image: url(../assets/images/about-partner-slider.png);
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+.about__partner-head {
+    @include flexCenter;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+
+    .about__partner-tt {
+        text-align: center;
+    }
+}
+
+.about__partner-bot {
+    .swiper-wrapper {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    .swiper-slide {
+        height: fit-content;
+        background: rgba(255, 255, 255, 0.2);
+        @include br(0.5rem);
+        width: auto;
+        @include flexCenter;
+    }
+
+    .about__partner-img {
+        width: auto;
+        height: 11rem;
+        @include flexCenter;
+    }
+
+    @include max(1400px) {
+        padding-bottom: 4rem;
+    }
+
+    @include max(1400px) {
+        // display: flex;
+        // max-height: 27rem;
+    }
+}
+
+// PARTNER
+
+
+
+
+// BOOKING
+.about__booking {
+    padding: 8rem 0 10rem 0;
+    position: relative;
+
+    &-bg {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        pointer-events: none;
+
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+
+        }
+    }
+}
+
+.booking__left {
+    &-img {
+
+        // width: 150px;
+        @include max(600px) {
+            display: none;
+        }
+
+        img {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    .evaluate__wrapper {
+        @include flexCenter;
+        gap: 1.8rem;
+
+        @include max(600px) {
+            justify-content: flex-start;
+        }
+
+        .evaluate__num {
+            font-family: "SVN-Saudagar", sans-serif;
+            font-size: 6.4rem;
+
+            @include max(1000px) {
+                font-size: 4.5rem;
+                text-align: left;
+            }
+        }
+
+        .evaluate__box {
+            .fa-star {
+                color: #FFC107;
+            }
+
+            .start__text {
+                font-family: "SVN-Saudagar",
+                    sans-serif;
+                font-size: 2rem;
+
+                @include max(1000px) {
+                    font-size: 1.4rem;
+                }
+            }
+
+        }
+    }
+}
+
+.booking__right {
+    .title {
+        font-size: 20rem;
+        text-align: center;
+        background: linear-gradient(90deg, #FFAF61 0.37%, #DC9A27 27.52%, #EDB31F 52.76%, #D7942A 80.98%, #B06828 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+        font-family: "Sign Rathi", sans-serif;
+        line-height: 1.4;
+        padding-left: 0.3rem;
+        margin-bottom: 3.2rem;
+        transition: 0.8s;
+        clip-path: circle(140.9% at 0 0);
+        transition-delay: 0.5s;
+
+        @include max(1000px) {
+            font-size: 12rem;
+            text-align: left;
+        }
+
+        @include max(800px) {
+            font-size: 7rem;
+            text-align: left;
+        }
+
+        @include max(600px) {
+            font-size: 7rem;
+        }
+
+
+    }
+
+    .booking__btn {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        cursor: pointer;
+        padding: 1rem 2rem;
+        flex-shrink: 0;
+        border-radius: 100rem;
+        height: 4rem;
+        width: fit-content;
+        overflow: hidden;
+        min-width: 15rem;
+        gap: 1rem;
+
+        &:hover::before {
+            // transform: scaleY(1);
+        }
+
+        span {
+            @include textHl;
+            font-weight: 700;
+        }
+
+        span.icon {
+            color: var(--color-orange);
+            opacity: .9;
+        }
+    }
+
+    .booking__btn::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        padding: 0.2rem;
+        // transform: scaleY(0);
+        background: linear-gradient(90deg, #FFAF61 0.37%, #DC9A27 27.52%, #EDB31F 52.76%, #D7942A 80.98%, #B06828 100%);
+        border-radius: 100rem;
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
+    }
+
+}
