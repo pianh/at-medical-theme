@@ -6,18 +6,7 @@ get_header();
 ?>
 <main class="main">
     <!-- breacrum -->
-    <div class="breadcrumb">
-        <div class="container">
-            <ul class="breadcrumb__list">
-                <li class="breadcrumb__item">
-                    <a href="#" class="breadcrumb__item-link">Home</a>
-                </li>
-                <li class="breadcrumb__item">
-                    <a href="#" class="breadcrumb__item-link">Tuyển dụng</a>
-                </li>
-            </ul>
-        </div>
-    </div>
+    <?php getBreadcrumb() ?>
     <section class="contact">
         <div class="container">
             <div class="contact__head">

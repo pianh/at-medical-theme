@@ -56,12 +56,12 @@
       overflow: hidden;
       background-color: white;
       cursor: pointer;
-      opacity: 0.5;
+      opacity: 0.5 !important;
       transition: opacity .5s ease;
     }
 
-    .swiper-slide-thumb-active .product-slider-thumb__img {
-      opacity: 1;
+    .swiper-slide-active>.product-slider-thumb__img {
+      opacity: 1 !important;
     }
 
     .product__control {

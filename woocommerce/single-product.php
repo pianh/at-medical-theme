@@ -23,21 +23,7 @@ get_header( 'shop' ); ?>
 
 <main class="main">
     <!-- Breadcrumb -->
-    <div class="breadcrumb">
-        <div class="container">
-            <ul class="breadcrumb__list">
-                <li class="breadcrumb__item">
-                    <a href="#" class="breadcrumb__item-link">Home</a>
-                </li>
-                <li class="breadcrumb__item">
-                    <a href="#" class="breadcrumb__item-link">Sản phẩm</a>
-                </li>
-								<li class="breadcrumb__item">
-                    <a href="#" class="breadcrumb__item-link">Máy triệt lông</a>
-                </li>
-            </ul>
-        </div>
-    </div>
+	<?php getBreadcrumb(); ?>
 	<section class="product">
 		<div class="container">
 			<div class="row">

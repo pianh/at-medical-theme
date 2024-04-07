@@ -5038,13 +5038,16 @@ li.current-menu-item > a {
   font-style: normal;
   font-weight: 600;
   line-height: 2.1rem;
+  flex: 1;
 }
 .news__product-outs .product__item .product__img {
-  width: 11rem;
-  max-width: 100%;
-  object-fit: cover;
+  width: 10rem;
   border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
   overflow: hidden;
+}
+.news__product-outs .product__item .product__img img {
+  min-width: 11rem;
+  object-fit: cover;
 }
 
 .about {
@@ -5662,11 +5665,11 @@ li.current-menu-item > a {
   overflow: hidden;
   background-color: white;
   cursor: pointer;
-  opacity: 0.5;
+  opacity: 0.5 !important;
   transition: opacity 0.5s ease;
 }
-.product__left .product-slider-thumb .swiper-slide-thumb-active .product-slider-thumb__img {
-  opacity: 1;
+.product__left .product-slider-thumb .swiper-slide-active > .product-slider-thumb__img {
+  opacity: 1 !important;
 }
 .product__left .product-slider-thumb .product__control {
   display: flex;

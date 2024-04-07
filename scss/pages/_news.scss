@@ -266,14 +266,19 @@
             font-style: normal;
             font-weight: 600;
             line-height: 2.1rem;
+            flex: 1;
         }
 
         .product__img {
-            width: 11rem;
-            max-width: 100%;
-            object-fit: cover;
+            width: 10rem;
+            // max-width: 100%;
             @include rounded(0.5rem);
             overflow: hidden;
+
+            img {
+                min-width: 11rem;
+                object-fit: cover;
+            }
         }
     }
 }

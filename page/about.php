@@ -12,18 +12,7 @@ Template name: About
             <img src="<?php echo BASE_URL; ?>/assets/images/bn-about.jpg" alt="bn">
         </div>
         <!-- Breadcrumb -->
-        <div class="breadcrumb">
-            <div class="container">
-                <ul class="breadcrumb__list">
-                    <li class="breadcrumb__item">
-                        <a href="#" class="breadcrumb__item-link">Home</a>
-                    </li>
-                    <li class="breadcrumb__item">
-                        <a href="#" class="breadcrumb__item-link">Về chúng tôi</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+        <?php getBreadcrumb() ?>
         <div class="about__vision">
             <div class="container">
                 <div class="about__vision-head">

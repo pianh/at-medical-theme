@@ -87,15 +87,17 @@ get_header();
                                             </div>
                                         </a>
                                         <div class="news__outs-right-cnt">
-                                            <h3 class="highlight title"><?php the_title(); ?></h3>
-                                            <div class="author">
-                                                <span class="date"><?php echo custom_vn_date(); ?></span>
-                                                <span class="dot"></span>
-                                                <span class="name">by  <?php echo get_the_author(); ?></span>
-                                            </div>
-                                            <a href="<?php the_permalink(); ?>" class="see-btn">
-                                            <span> Đọc thêm</span>
-                                                <i class="fa-solid fa-arrow-right-long"></i>
+                                            <a href="<?php the_permalink(); ?>">
+                                                <h3 class="highlight title"><?php the_title(); ?></h3>
+                                                <div class="author">
+                                                    <span class="date"><?php echo custom_vn_date(); ?></span>
+                                                    <span class="dot"></span>
+                                                    <span class="name">by  <?php echo get_the_author(); ?></span>
+                                                </div>
+                                                <a href="<?php the_permalink(); ?>" class="see-btn">
+                                                <span> Đọc thêm</span>
+                                                    <i class="fa-solid fa-arrow-right-long"></i>
+                                                </a>
                                             </a>
                                         </div>
                                     </div>
@@ -204,18 +206,31 @@ get_header();
                             <h3 class="product__title">
                                 Sản phẩm nổi bật
                             </h3>
-                            <a href="#" class="product__item">
+                            <?php 
+                            $tax_query[] = array(
+                                'taxonomy' => 'product_visibility',
+                                'field'    => 'name',
+                                'terms'    => 'featured',
+                                'operator' => 'IN', // or 'NOT IN' to exclude feature products
+                            );
+                            $args = array( 
+                                'post_type' => 'product', 
+                                'posts_per_page' => 10,
+                                'tax_query' => $tax_query, 
+                                'post_status' => 'publish'); 
+                            ?>
+                            <?php $getposts = new WP_query( $args);?>
+                            <?php global $wp_query; $wp_query->in_the_loop = true; ?>
+                            <?php while ($getposts->have_posts()) : $getposts->the_post(); ?>
+                            <?php global $product; ?>
+                            <a href="<?php the_permalink(); ?>" class="product__item">
                                 <div class="product__img">
-                                    <img src="<?php echo BASE_URL; ?>/assets/images/product1.png" alt="Product">
+                                    <img src='<?php echo get_the_post_thumbnail_url($post_id);?>' alt='<?php the_title(); ?>' />
                                 </div>
-                                <div class="product__name">Máy Triệt Lông IPL K3: 2 TAY CẦM</div>
-                            </a>
-                            <a href="#" class="product__item">
-                                <div class="product__img">
-                                    <img src="<?php echo BASE_URL; ?>/assets/images/product1.png" alt="Product">
+                                <div class="product__name"><?php the_title(); ?>
                                 </div>
-                                <div class="product__name">Máy Triệt Lông IPL K3: 2 TAY CẦM</div>
                             </a>
+                            <?php endwhile; wp_reset_postdata(); ?>
                         </div>
                     </div>
                 </div>
