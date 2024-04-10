@@ -6,6 +6,7 @@ import HeaderModule from "./module/HeaderModule.js";
 import OpenClosePopup from "./module/OpenClosePopup.js";
 import TabModule from "./module/TabModule.js";
 import CollapseModule from "./module/CollapseModule.js";
+import FormModule from "./module/FormModule.js";
 
 window.addEventListener("DOMContentLoaded", () => {
     OpenClosePopup();
@@ -15,4 +16,5 @@ window.addEventListener("DOMContentLoaded", () => {
     HeaderModule();
     PopupModule();
     CollapseModule();
+    FormModule();
 });

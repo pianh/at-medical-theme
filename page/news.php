@@ -148,36 +148,39 @@ get_header();
                                 </div>
                             <?php endwhile; ?>
                             <!-- end loop -->
-                                <div class="pagination">
-                                    <ul class="pagination__list pagination__new">
-                                        <?php 
-                                            $paginate_links = paginate_links( array(
-                                                'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
-                                                'total'        => $query->max_num_pages,
-                                                'current'      => max( 1, get_query_var( 'paged' ) ),
-                                                'format'       => '?paged=%#%',
-                                                'show_all'     => false,
-                                                'type'         => 'array', // lấy mảng các liên kết
-                                                'end_size'     => 2,
-                                                'mid_size'     => 1,
-                                                'prev_next'    => true,
-                                                'prev_text'    => __('«'),
-                                                'next_text'    => __('»'),
-                                                'add_args'     => false,
-                                                'add_fragment' => '',
-                                            ) );
+                            <div class="pagination">
+                                <ul class="pagination__list pagination__new">
+                                    <?php 
+                                        $paginate_links = paginate_links( array(
+                                            'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
+                                            'total'        => $query->max_num_pages,
+                                            'current'      => max( 1, get_query_var( 'paged' ) ),
+                                            'format'       => '?paged=%#%',
+                                            'show_all'     => false,
+                                            'type'         => 'array', // lấy mảng các liên kết
+                                            'end_size'     => 2,
+                                            'mid_size'     => 1,
+                                            'prev_next'    => true,
+                                            'prev_text'    => __('«'),
+                                            'next_text'    => __('»'),
+                                            'add_args'     => false,
+                                            'add_fragment' => '',
+                                        ) );
 
-                                        foreach ( $paginate_links as $link ) {
-                                            echo '<li class="pagination__item">' . $link . '</li>';
-                                        }
-                                        ?>
-                                    </ul>
+                                    foreach ( $paginate_links as $link ) {
+                                        echo '<li class="pagination__item">' . $link . '</li>';
+                                    }
+                                    ?>
+                                </ul>
                                 </div>
                             <?php wp_reset_postdata(); ?>
 
                             <?php else : ?>
                                 <p><?php _e( 'Xin lỗi, không có bài viết nào được tìm thấy' ); ?></p>
                             <?php endif; ?>
+
+
+
                             <!-- <div class="pagination">
                                 <ul class="pagination__list pagination__new">
                                     <li class="pagination__item">
@@ -202,36 +205,7 @@ get_header();
                         </div>
                     </div>
                     <div class="col-12 col-lg-4">
-                        <div class="news__product-outs">
-                            <h3 class="product__title">
-                                Sản phẩm nổi bật
-                            </h3>
-                            <?php 
-                            $tax_query[] = array(
-                                'taxonomy' => 'product_visibility',
-                                'field'    => 'name',
-                                'terms'    => 'featured',
-                                'operator' => 'IN', // or 'NOT IN' to exclude feature products
-                            );
-                            $args = array( 
-                                'post_type' => 'product', 
-                                'posts_per_page' => 10,
-                                'tax_query' => $tax_query, 
-                                'post_status' => 'publish'); 
-                            ?>
-                            <?php $getposts = new WP_query( $args);?>
-                            <?php global $wp_query; $wp_query->in_the_loop = true; ?>
-                            <?php while ($getposts->have_posts()) : $getposts->the_post(); ?>
-                            <?php global $product; ?>
-                            <a href="<?php the_permalink(); ?>" class="product__item">
-                                <div class="product__img">
-                                    <img src='<?php echo get_the_post_thumbnail_url($post_id);?>' alt='<?php the_title(); ?>' />
-                                </div>
-                                <div class="product__name"><?php the_title(); ?>
-                                </div>
-                            </a>
-                            <?php endwhile; wp_reset_postdata(); ?>
-                        </div>
+                        <?php get_template_part("template_part/outstanding", "product"); ?>
                     </div>
                 </div>
 

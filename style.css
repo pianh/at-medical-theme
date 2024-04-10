@@ -2234,6 +2234,37 @@ li.current-menu-item > a {
   outline: none;
   border-bottom: 1px #DADADA solid;
   letter-spacing: 0.4px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-white);
+  background: transparent;
+}
+.list__item .wpcf7-submit {
+  border: none;
+  cursor: pointer;
+  position: static;
+  z-index: 2;
+  color: #fff;
+  background: linear-gradient(90deg, #B66F29 0.37%, #DC9A27 27.52%, #EDB31F 52.76%, #D7942A 80.98%, #B06828 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.list__item .wpcf7-spinner {
+  display: none;
+}
+
+.wpcf7-not-valid-tip {
+  color: red;
+  font-size: 1.2rem;
+}
+
+.wpcf7 form.invalid .wpcf7-response-output {
+  color: red;
+  font-size: 1.2rem;
+  border: none;
+  text-align: center;
+  margin-top: 0;
 }
 
 .list__item:nth-child(5) {
@@ -2245,6 +2276,7 @@ li.current-menu-item > a {
   outline: none;
   border-bottom: 1px #DADADA solid;
   letter-spacing: 0.4px;
+  background-color: transparent;
 }
 
 .list__item:nth-child(6) {
@@ -2264,8 +2296,13 @@ li.current-menu-item > a {
   font-weight: 500;
 }
 .booking__form .list__item-input {
-  background: transparent;
   color: var(--color-white);
+}
+
+input,
+textarea {
+  color: #fff;
+  /* Thay đổi màu chữ thành màu đỏ (#ff0000) */
 }
 
 .home-hero .swiper-slide img {
@@ -3899,7 +3936,7 @@ li.current-menu-item > a {
     width: 100%;
   }
 }
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
   .talk .talk__cnt-des .talk__cnt-left {
     margin-top: auto;
     margin-bottom: auto;
@@ -3948,8 +3985,13 @@ li.current-menu-item > a {
     width: 100%;
     margin-top: 2rem;
     min-height: 5rem;
-    height: fit-content;
+    height: 55rem;
     padding: 0 1.5rem;
+  }
+}
+@media screen and (max-width: 400px) {
+  .talk .talk__cnt-right {
+    height: auto;
   }
 }
 .talk .talk__cnt-right .talk-swiper-thumb {
@@ -5513,6 +5555,7 @@ li.current-menu-item > a {
   overflow: hidden;
   min-width: 15rem;
   gap: 1rem;
+  border: none;
 }
 .booking__right .booking__btn span {
   color: #fff;
@@ -5668,7 +5711,7 @@ li.current-menu-item > a {
   opacity: 0.5 !important;
   transition: opacity 0.5s ease;
 }
-.product__left .product-slider-thumb .swiper-slide-active > .product-slider-thumb__img {
+.product__left .product-slider-thumb .swiper-slide-thumb-active > .product-slider-thumb__img {
   opacity: 1 !important;
 }
 .product__left .product-slider-thumb .product__control {
@@ -6026,4 +6069,126 @@ li.current-menu-item > a {
 .product-similar .swiper-pagination .swiper-pagination-bullet-active {
   background: linear-gradient(90deg, #FFAF61 0.37%, #DC9A27 27.52%, #EDB31F 52.76%, #D7942A 80.98%, #B06828 100%);
   opacity: 1;
+}
+
+.srt__left .job-require__tt {
+  color: #fff;
+  background: linear-gradient(90deg, #B66F29 0.37%, #DC9A27 27.52%, #EDB31F 52.76%, #D7942A 80.98%, #B06828 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+}
+.srt__left .job-require__des {
+  margin-bottom: 2rem;
+}
+.srt__left .job__list {
+  display: flex;
+  gap: 1rem;
+}
+@media screen and (max-width: 800px) {
+  .srt__left .job__list {
+    flex-wrap: wrap;
+  }
+}
+@media screen and (max-width: 400px) {
+  .srt__left .job__list {
+    flex-direction: column;
+  }
+}
+.srt__left .job__list .job__item {
+  display: flex;
+  align-items: unset;
+  justify-content: unset;
+  gap: 1.06rem;
+  padding: 1.6rem;
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(2rem);
+  width: 33.3333333333%;
+}
+@media screen and (max-width: 1000px) {
+  .srt__left .job__list .job__item {
+    width: 33.333%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .srt__left .job__list .job__item {
+    width: 40%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .srt__left .job__list .job__item {
+    width: 100%;
+  }
+}
+.srt__left .job__list .job__item-icon {
+  width: 4rem;
+  flex-shrink: 0;
+}
+.srt__left .job__list .job__item-cnt {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem 1rem !important;
+}
+.srt__left .job__list .job__item-cnt .tt {
+  font-size: 1.4rem;
+  line-height: 1.82rem;
+  padding-bottom: 0.3rem;
+  white-space: nowrap;
+}
+.srt__left .job__list .job__item-cnt .des {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2.4rem;
+}
+.srt__left .job__detail {
+  padding-top: var(--pd-sc);
+}
+.srt__left .job__detail p strong {
+  text-align: left;
+  font-size: 1.7rem;
+  font-style: normal;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(90deg, #B66F29 0.37%, #DC9A27 27.52%, #EDB31F 52.76%, #D7942A 80.98%, #B06828 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.back__page {
+  padding-top: var(--pd-sc);
+  padding-bottom: var(--pd-sc);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.back__page .txt {
+  color: #5579A4;
+  font-family: Noto Sans;
+  font-size: 1.1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.43rem;
+  text-transform: uppercase;
+}
+
+.single__left p strong {
+  text-align: left;
+  font-size: 1.7rem;
+  font-style: normal;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(90deg, #B66F29 0.37%, #DC9A27 27.52%, #EDB31F 52.76%, #D7942A 80.98%, #B06828 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.single__left img {
+  border-radius: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }

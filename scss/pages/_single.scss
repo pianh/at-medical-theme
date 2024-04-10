@@ -1,0 +1,13 @@
+.single__left p strong {
+  text-align: left;
+  font-size: 1.7rem;
+  font-style: normal;
+  font-weight: 700;
+  @include textHl;
+}
+
+.single__left img {
+  border-radius: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}

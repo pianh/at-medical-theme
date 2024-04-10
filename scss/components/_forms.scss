@@ -34,7 +34,37 @@
         outline: none;
         border-bottom: 1px #DADADA solid;
         letter-spacing: 0.4px;
+        // @include textHl;
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: var(--color-white);
+        background: transparent;
     }
+
+    .wpcf7-submit {
+        border: none;
+        cursor: pointer;
+        position: static;
+        z-index: 2;
+        @include textHl;
+    }
+
+    .wpcf7-spinner {
+        display: none;
+    }
+}
+
+.wpcf7-not-valid-tip {
+    color: red;
+    font-size: 1.2rem;
+}
+
+.wpcf7 form.invalid .wpcf7-response-output {
+    color: red;
+    font-size: 1.2rem;
+    border: none;
+    text-align: center;
+    margin-top: 0;
 }
 
 .list__item:nth-child(5) {
@@ -46,11 +76,13 @@
         outline: none;
         border-bottom: 1px #DADADA solid;
         letter-spacing: 0.4px;
+        background-color: transparent;
     }
 }
 
 .list__item:nth-child(6) {
     width: 100%;
+
 }
 
 .booking__form {
@@ -68,8 +100,14 @@
         }
 
         &-input {
-            background: transparent;
+            // background: transparent;
             color: var(--color-white);
         }
     }
+}
+
+input,
+textarea {
+    color: #fff;
+    /* Thay đổi màu chữ thành màu đỏ (#ff0000) */
 }

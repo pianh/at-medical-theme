@@ -252,38 +252,10 @@ export default function SwiperModule() {
         },
     });
 
-    // Vì sao chọn chúng tôi
+    // Product
     var productSliderThumb = new Swiper(".productSliderThumb", {
         // direction: 'vertical',
         spaceBetween: 20,
-        slidesPerView: 4,
-        // freeMode: true,
-        // watchSlidesProgress: true,
-    });
-
-    var productSlider = new Swiper(".productSlider", {
-        spaceBetween: 10,
-        effect: "fade",
-        slidesPerView: 4,
-        // touchEventsTarget: 'container',
-        // preventInteractionOnTransition: true,
-        allowTouchMove: false,
-        simulateTouch: true,
-        navigation: {
-            nextEl: ".product-next",
-            prevEl: ".product-prev",
-        },
-        thumbs: {
-            swiper: productSliderThumb,
-        },
-    });
-
-    var productSimilarMain = new Swiper(".productSimilarMain", {
-        spaceBetween: 10,
-        speed: 2000,
-        // touchEventsTarget: 'container',
-        // preventInteractionOnTransition: true,
-        // allowTouchMove: true,
         breakpoints: {
             320: {
                 slidesPerView: 2,
@@ -302,6 +274,52 @@ export default function SwiperModule() {
                 spaceBetween: 20,
             },
         },
+        // freeMode: true,
+        // watchSlidesProgress: true,
+    });
+
+    var productSlider = new Swiper(".productSlider", {
+        spaceBetween: 10,
+        effect: "fade",
+        // touchEventsTarget: 'container',
+        // preventInteractionOnTransition: true,
+        allowTouchMove: false,
+        simulateTouch: true,
+
+        navigation: {
+            nextEl: ".product-next",
+            prevEl: ".product-prev",
+        },
+        thumbs: {
+            swiper: productSliderThumb,
+        },
+    });
+
+    var productSimilarMain = new Swiper(".productSimilarMain", {
+        spaceBetween: 10,
+        speed: 2000,
+        breakpoints: {
+            320: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            },
+            640: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+            },
+            768: {
+                slidesPerView: 3,
+                spaceBetween: 40,
+            },
+            1024: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+            },
+        },
+        // touchEventsTarget: 'container',
+        // preventInteractionOnTransition: true,
+        // allowTouchMove: true,
+
         pagination: {
             el: ".product-similar-pagination",
             clickable: true,

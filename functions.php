@@ -1,5 +1,5 @@
 <?php 
-    require get_theme_file_path('/inc/rest-api.php');  // Inc rest-api.php file
+    require get_theme_file_path('/includes/rest-api.php');  // Inc rest-api.php file
     define("BASE_URL", get_template_directory_uri());   
     function load_assets() {
         // import css file
@@ -22,6 +22,12 @@
 
     // Ẩn thanh Admin Bar
     add_filter('show_admin_bar', '__return_false');
+
+    function enqueue_admin_custom_css() {
+    wp_enqueue_style( 'admin-custom', get_stylesheet_directory_uri() . '/admin-custom.css' );
+    }
+    add_action( 'admin_enqueue_scripts', 'enqueue_admin_custom_css' );
+
 
     // Register Menu
     function leo_setup_theme(){
@@ -120,6 +126,23 @@
     function leo_redirectHomePage() {
         return esc_url(site_url('/'));
     }
+
+/**
+ *  Redirect after form submission
+ **/
+
+add_action( 'wpcf7_mail_sent', 'redirect_after_form_submit' );
+
+function redirect_after_form_submit( $contact_form ) {
+    $form_id = $contact_form->id();
+    if ( $form_id == YOUR_FORM_ID ) {
+        // Thực hiện chuyển hướng
+        wp_redirect( BASE_URL .'/xac-nhan-dat-hang' );
+        exit();
+    }
+}
+
+
 
  /**
  * WooCommerce

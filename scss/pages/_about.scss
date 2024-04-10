@@ -480,6 +480,7 @@
         overflow: hidden;
         min-width: 15rem;
         gap: 1rem;
+        border: none;
 
         &:hover::before {
             // transform: scaleY(1);

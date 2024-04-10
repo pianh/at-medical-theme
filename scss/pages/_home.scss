@@ -894,7 +894,7 @@
                 width: 100%;
             }
 
-            @include max(800px) {
+            @include max(1000px) {
                 margin-top: auto;
                 margin-bottom: auto;
             }
@@ -958,9 +958,14 @@
             // min-height: 10rem;
             // max-height: 10rem;
             min-height: 5rem;
-            height: fit-content;
+            height: 55rem;
+            // height: fit-content;
             // overflow: hidden;
             padding: 0 1.5rem;
+        }
+
+        @include max(400px) {
+            height: auto;
         }
 
         .talk-swiper-thumb {
